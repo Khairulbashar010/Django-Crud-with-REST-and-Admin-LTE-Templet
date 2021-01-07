@@ -21,6 +21,7 @@
                                     <h3 class="box-title"><strong>Update</strong> Entry </h3>
                                 </div>
                                 <form validate="true" role="form" method="POST" action="#">
+                                    {% csrf_token %}
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Question</label>
