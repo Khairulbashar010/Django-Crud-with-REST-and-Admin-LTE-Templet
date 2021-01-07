@@ -9,4 +9,4 @@ def index(request):
 
 
 def create(request):
-    return render(request, 'crud/create.html')
+    return render(request, 'crud/create.html', {'title': 'Create'})

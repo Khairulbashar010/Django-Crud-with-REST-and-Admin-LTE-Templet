@@ -1,10 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>All Entries</title>
-</head>
-<body>
-<h1>All Entries</h1>
-</body>
-</html>
+{% extends "crud/layouts/base.html" %}
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Well Come To Entries
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- START ACCORDION & CAROUSEL-->
+        <!-- END ACCORDION & CAROUSEL-->
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Entry List</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 75px;">
+                                <div class="input-group-btn">
+                                    <a href="{% url 'crud_create' %}"><button type="button" class="btn btn-block btn-primary">Create</button></a>
+                                    <!-- <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <button id="swapFire" class="btn btn-primary showFire">
+                                            <span class="fa fa-plus"></span> Form Open
+                                        </button>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+<!--
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>Questions</th>
+                                <th>Status</th>
+                                <th style="width: 150px">Action</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+
+                                    <button class="btn btn-danger" type="button" onclick="deleteTag()">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+-->
+                        <div class="continer">
+                            <div class="col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>Questions</th>
+                                <th>Status</th>
+                                <th style="width: 150px">Action</th>
+                            </tr>
+                        </table>
+                        <div class="login-box">
+                            <h1 style="color: red;">No Data Availabe</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}
