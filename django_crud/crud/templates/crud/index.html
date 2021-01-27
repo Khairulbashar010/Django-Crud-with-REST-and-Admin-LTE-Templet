@@ -23,7 +23,7 @@
                         <div class="box-tools">
                             <div class="input-group input-group-sm" style="width: 75px;">
                                 <div class="input-group-btn">
-                                    <a href="{% url 'crud_create' %}"><button type="button" class="btn btn-block btn-primary">Create</button></a>
+                                    <a href="{% url 'create_page' %}"><button type="button" class="btn btn-block btn-primary">Create</button></a>
                                     <!-- <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                                         <button id="swapFire" class="btn btn-primary showFire">
                                             <span class="fa fa-plus"></span> Form Open
@@ -34,19 +34,22 @@
                         </div>
                     </div>
                     <!-- /.box-header -->
+                    {% if posts %}
                     <div class="box-body table-responsive no-padding">
-<!--
                         <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
                                 <th>Questions</th>
+                                <th>Answers</th>
                                 <th>Status</th>
                                 <th style="width: 150px">Action</th>
                             </tr>
+                            {% for post in posts %}
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{post.id}}</td>
+                                <td>{{post.question}}</td>
+                                <td>{{post.answer}}</td>
+                                <td>{{post.isActive}}</td>
                                 <td>
 
                                     <button class="btn btn-danger" type="button" onclick="deleteTag()">
@@ -54,13 +57,14 @@
                                     </button>
                                 </td>
                             </tr>
+                            {% endfor %}
                         </table>
--->
                         <div class="continer">
                             <div class="col-xs-12">
                             </div>
                         </div>
                     </div>
+                    {% else %}
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
@@ -74,6 +78,8 @@
                             <h1 style="color: red;">No Data Availabe</h1>
                         </div>
                     </div>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
