@@ -51,7 +51,7 @@
                                 <td>{{post.answer}}</td>
                                 <td>{{post.isActive}}</td>
                                 <td>
-
+                                    <a class="btn btn-success" type="button" href="{% url 'edit_page' post.id %}">Edit</a>
                                     <button class="btn btn-danger" type="button" onclick="deleteTag()">
                                         <i class="material-icons">delete</i>
                                     </button>
