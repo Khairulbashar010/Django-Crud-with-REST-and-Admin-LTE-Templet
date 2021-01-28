@@ -7,4 +7,5 @@ urlpatterns = [
     path('create_post', views.create, name='crud_create'),
     path('edit/<int:id>', views.editPage, name='edit_page'),
     path('update/<int:id>', views.update, name='crud_update'),
+    path('delete/<int:id>', views.delete, name='crud_delete'),
 ]

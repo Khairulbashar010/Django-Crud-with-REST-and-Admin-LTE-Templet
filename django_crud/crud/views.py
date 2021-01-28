@@ -44,3 +44,8 @@ def update(request, id):
     return redirect('crud_index')
 
 
+def delete(request, id):
+    PostInfo.objects.filter(id=id).delete()
+
+    return redirect('crud_index')
+
