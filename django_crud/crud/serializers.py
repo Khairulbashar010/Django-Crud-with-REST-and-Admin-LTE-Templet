@@ -6,6 +6,6 @@ class PostInfoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PostInfo
-        fields = '__all__'
+        fields = ('question', 'answer', 'isActive')
 
 
