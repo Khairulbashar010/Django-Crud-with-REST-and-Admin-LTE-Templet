@@ -1,8 +1,18 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import PostInfo
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import PostInfoSerializer
+
 
 # Create your views here.
+class PostInfoClass(APIView):
+    def get(self, request):
+        posts = PostInfo.objects.all()
+        serializer = PostInfoSerializer(posts, many=True)
+        return Response(serializer.data)
 
 
 def index(request):
