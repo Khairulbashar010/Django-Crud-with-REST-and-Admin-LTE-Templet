@@ -13,3 +13,8 @@ Start project named "django_crud",
 Start app named crud,
 Connect database using mysql client with your credentials in settings.py,
 Migrate and runserver.
+
+
+# View api response localhost:8000/data
+
+# API view of index page localhost:8000/index
