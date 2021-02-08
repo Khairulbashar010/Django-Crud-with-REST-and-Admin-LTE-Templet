@@ -6,6 +6,6 @@ class PostInfoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PostInfo
-        fields = ('question', 'answer', 'isActive')
+        fields = ('id', 'question', 'answer', 'isActive')
 
 

@@ -6,7 +6,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Well Come To Entries
+            Well Come To API VIEW
         </h1>
     </section>
 
@@ -21,11 +21,10 @@
                     <div class="box-header">
                         <h3 class="box-title">Entry List</h3>
                         <div class="box-tools">
-                            <div class="input-group input-group-sm" style="width: 75px;">
-                                <div class="input-group-btn">
-                                    <a href="{% url 'api_index' %}"><button type="button" class="btn btn-block btn-primary">API view</button></a>
+                            <div class="input-group-btn">
+                                    <a href="{% url 'crud_index' %}"><button type="button" class="btn btn-block btn-primary">HTML view</button></a>
                                 </div>
-                            </div><div class="input-group input-group-sm" style="width: 75px;">
+                            <div class="input-group input-group-sm" style="width: 75px;">
                                 <div class="input-group-btn">
                                     <a href="{% url 'create_page' %}"><button type="button" class="btn btn-block btn-primary">Create</button></a>
                                 </div>
@@ -33,7 +32,7 @@
                         </div>
                     </div>
                     <!-- /.box-header -->
-                    {% if posts %}
+                    {% if apiData %}
                     <div class="box-body table-responsive no-padding">
                         <table class="table table-hover">
                             <tr>
@@ -43,18 +42,18 @@
                                 <th>Status</th>
                                 <th style="width: 150px">Action</th>
                             </tr>
-                            {% for post in posts %}
+                            {% for data in apiData %}
                             <tr>
-                                <td>{{post.id}}</td>
-                                <td>{{post.question}}</td>
-                                <td>{{post.answer}}</td>
-                                <td>{{post.isActive}}</td>
+                                <td>{{data.id}}</td>
+                                <td>{{data.question}}</td>
+                                <td>{{data.answer}}</td>
+                                <td>{{data.isActive}}</td>
                                 <td>
-                                    <a class="btn btn-success" type="button" href="{% url 'edit_page' post.id %}">Edit</a>
-                                    <button class="btn btn-danger" type="button" onclick="deleteTag({{post.id}})">
+                                    <a class="btn btn-success" type="button" href="{% url 'edit_page' data.id %}">Edit</a>
+                                    <button class="btn btn-danger" type="button" onclick="deleteTag(data.id)">
                                         <i class="material-icons">delete</i>
                                     </button>
-                                    <form id="delete-form-{{post.id}}" action="{% url 'crud_delete' post.id %}" method="POST">
+                                    <form id="delete-form-{{data.id}}" action="{% url 'crud_delete' data.id %}" method="POST">
                                         {% csrf_token %}
                                     </form>
                                 </td>

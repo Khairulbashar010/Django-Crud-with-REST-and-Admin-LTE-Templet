@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import PostInfoSerializer
+import requests
 
 
 # Create your views here.
@@ -19,8 +20,12 @@ def index(request):
     posts = {
         'posts': PostInfo.objects.all()
     }
-
     return render(request, 'crud/index.html', posts)
+
+
+def index2(request):
+    apiData= requests.get('http://localhost:8000/data').json()
+    return render(request, 'crud/index2.html', {'apiData': apiData})
 
 
 def createPage(request):
