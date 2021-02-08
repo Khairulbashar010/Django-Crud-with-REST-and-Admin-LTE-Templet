@@ -1,13 +1,14 @@
-# Django-Crud-with-Admin-LTE-Templet
-This is a simple django CRUD application. 
+# Django-Crud-with-REST-and-Admin-LTE-Templet
+This is a simple django CRUD application with REST api. 
 
 
 Required Libraries-
-Django, MySQL
+Django, Djangorestframework, MySQL
 
 
 To run it:
 Install django (my version 3.1.5),
+Install djangorestframework,
 Start project named "django_crud",
 Start app named crud,
 Connect database using mysql client with your credentials in settings.py,
